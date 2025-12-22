@@ -8,6 +8,7 @@ export const LanguageSwitcher: React.FC = () => {
 
   const languages = [
     { code: "en", name: "English", flag: "🇺🇸" },
+    { code: "ar", name: "العربية", flag: "🇯🇴" },
     // Add more languages here as you create translation files
     // { code: 'es', name: 'Español', flag: '🇪🇸' },
     // { code: 'fr', name: 'Français', flag: '🇫🇷' },

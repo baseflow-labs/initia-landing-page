@@ -25,7 +25,7 @@
     "about": "About",
     "changelog": "Changelog",
     "connect": "Connect",
-    "copyright": "Initia. All rights reserved.",
+    "copyright": "All rights reserved.",
     "description": "The intelligent app engine that transforms your thoughts into production-ready source code.",
     "features": "Features",
     "howItWorks": "How it works",
@@ -61,7 +61,7 @@
   "hero": {
     "badge": "Engine v2.0 is now live",
     "cta": "Generate Your App",
-    "headline": "Full-Stack App — Now.",
+    "headline": "Full-Stack Ready-To-Use App — Now.",
     "placeholder": "e.g., A task management app with teams, nested tasks, and file attachments...",
     "quickTemplates": "Quick templates:",
     "secondary": "View Example",
@@ -105,8 +105,103 @@
     "title": "Free Forever"
   },
   "privacy": {
-    "badge": "Privacy first",
-    "description": "We don't store your proprietary ideas. Everything is generated just for you."
+    "badge": "Privacy Policy",
+    "contact": {
+      "emailLabel": "Email:",
+      "emailValue": "SuhaibAhmadAi@hotmail.com",
+      "locationLabel": "Location:",
+      "locationValue": "Jordan"
+    },
+    "disclaimer": "Note: This page is provided for informational purposes and does not constitute legal advice.",
+    "lastUpdated": "Last updated:",
+    "sections": {
+      "children": {
+        "text": "Initia is not intended for children under the age required by applicable law to consent to data processing. If you believe a child has provided us data, contact us to request deletion.",
+        "title": "Children’s privacy"
+      },
+      "contact": {
+        "text": "If you have questions about this Privacy Policy or want to request access, deletion, or correction, contact us using the details below.",
+        "title": "Contact us"
+      },
+      "cookies": {
+        "bullets": {
+          "analytics": "Analytics cookies (optional): help us understand usage patterns to improve the service.",
+          "essential": "Essential cookies: required for authentication, security, and core functionality.",
+          "preferences": "Preference cookies: remember settings like language or UI options."
+        },
+        "text": "We use cookies and similar technologies to keep you signed in, protect sessions, and improve the product. You can control cookies through your browser settings and (where available) our cookie controls.",
+        "title": "Cookies & tracking"
+      },
+      "howWeUse": {
+        "bullets": {
+          "auth": "Authenticate you and manage your account (including Google Sign-In).",
+          "communicate": "Send important service updates (e.g., security notices, major changes) when necessary.",
+          "improve": "Improve performance, reliability, and user experience.",
+          "provide": "Provide the core functionality: schema review, generation steps, and delivering downloadable code.",
+          "security": "Prevent abuse, protect against fraud, and maintain platform security."
+        },
+        "text": "We use collected information to operate the service and keep it secure:",
+        "title": "How we use your information"
+      },
+      "international": {
+        "text": "Our infrastructure or service providers may process data outside Jordan. Where this happens, we take reasonable steps to ensure appropriate safeguards are in place.",
+        "title": "International transfers"
+      },
+      "legalBases": {
+        "bullets": {
+          "consent": "Consent: for optional cookies or communications where required.",
+          "contract": "Contractual necessity: to provide the service you request.",
+          "legitimate": "Legitimate interests: to secure and improve the platform."
+        },
+        "text": "Depending on your location and applicable laws, our processing may be based on:",
+        "title": "Legal basis (where applicable)"
+      },
+      "retention": {
+        "text": "We keep personal data only as long as necessary for providing the service, complying with legal obligations, resolving disputes, and enforcing our policies. We may retain aggregated or anonymized analytics for longer.",
+        "title": "Data retention"
+      },
+      "security": {
+        "text": "We use reasonable technical and organizational measures to protect your data (e.g., access controls, encryption in transit where supported, secure authentication). However, no system is 100% secure.",
+        "title": "Security"
+      },
+      "sharing": {
+        "bullets": {
+          "google": "Google authentication: when you choose Google Sign-In, authentication is handled through Google’s OAuth flow.",
+          "legal": "Legal compliance: if required by law, court order, or to protect rights and safety.",
+          "noSell": "No selling: we do not sell your data or share it for third-party advertising purposes.",
+          "providers": "Service providers: hosting, logging, analytics, and email services that help us operate Initia (under appropriate safeguards)."
+        },
+        "text": "We do not sell your personal information. We may share information only in limited cases:",
+        "title": "Sharing your information"
+      },
+      "whatWeCollect": {
+        "bullets": {
+          "account": "Account information: name, email address, password (hashed), and basic profile data you submit.",
+          "cookies": "Cookies and similar technologies: used for session management, security, preferences, and analytics (where enabled).",
+          "generated": "Generated project inputs: prompts, schema data, and project settings you submit for generating code (we aim to minimize storage and keep it only as needed to deliver the service).",
+          "oauth": "Google Sign-In data: your Google account email and public profile details made available to us by Google (depending on your permissions).",
+          "usage": "Usage and device data: IP address, browser type, pages visited, timestamps, and diagnostic logs."
+        },
+        "text": "We collect information to provide and improve the service. Depending on how you use Initia, this may include:",
+        "title": "Information we collect"
+      },
+      "whoWeAre": {
+        "text": "Initia is a free, open-source service based in Jordan that helps you generate full-stack application code. We operate the website and the app generation workflow, including account login and Google Sign-In.",
+        "title": "Who we are"
+      },
+      "yourRights": {
+        "bullets": {
+          "access": "Request access to the personal data we hold about you.",
+          "correct": "Request correction of inaccurate or incomplete information.",
+          "delete": "Request deletion of your account and associated data (subject to legal requirements).",
+          "withdraw": "Withdraw consent for optional cookies or communications where applicable."
+        },
+        "text": "Depending on your location, you may have rights regarding your personal data. You can usually:",
+        "title": "Your rights & choices"
+      }
+    },
+    "subtitle": "This Privacy Policy explains how Initia collects, uses, and protects your information when you use our website and services.",
+    "title": "Privacy Policy"
   },
   "schema": {
     "primaryKey": "PK",

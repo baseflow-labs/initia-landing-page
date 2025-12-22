@@ -2,9 +2,8 @@ import { Github, Menu, X } from "lucide-react";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-
-import { LOGO } from "../constants";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import logoFull from "./logo-full.png";
 
 export const Header: React.FC = () => {
   const { t } = useTranslation();
@@ -15,7 +14,7 @@ export const Header: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <Link to="/" className="flex items-center">
-            {LOGO()}
+            <img src={logoFull} alt="Logo" className="h-8" />
           </Link>
 
           <div className="hidden md:flex space-x-8 items-center">
@@ -37,18 +36,26 @@ export const Header: React.FC = () => {
             >
               {t("footer.whoIsItFor")}
             </a>
-            <Link
-              to="/auth?mode=login"
+            <LanguageSwitcher />
+            <a
+              href="https://github.com/baseflow-labs"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-gray-600 hover:text-[#1E4C9D] font-medium transition-colors"
             >
-              {t("header.signIn")}
-            </Link>
-            <LanguageSwitcher />
+              <Github size={18} />
+            </a>
             <Link
               to="/generate"
               className="bg-[#3A7DFF] text-white px-5 py-2.5 rounded-lg font-medium hover:bg-blue-600 transition-all shadow-sm active:scale-95"
             >
               {t("header.startGenerating")}
+            </Link>
+            <Link
+              to="/auth?mode=login"
+              className="text-gray-600 hover:text-[#1E4C9D] font-medium transition-colors"
+            >
+              {t("header.signIn")}
             </Link>
           </div>
 
@@ -93,7 +100,8 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-1 md:col-span-1">
-            {LOGO("h-8 mb-6")}
+            <img src={logoFull} alt="Initia Logo" className="h-8 mb-4 h-100" />
+
             <p className="text-gray-600 text-sm leading-relaxed">
               {t("footer.description")}
             </p>
@@ -165,7 +173,7 @@ export const Footer: React.FC = () => {
         </div>
         <div className="border-t border-gray-300 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
           <p>
-            © {new Date().getFullYear()} {t("footer.copyright")}
+            © {new Date().getFullYear()} Initia. {t("footer.copyright")}
           </p>
           <p className="mt-4 md:mt-0">{t("footer.tagline")}</p>
         </div>

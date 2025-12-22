@@ -340,6 +340,190 @@ const AuthPage = () => {
   );
 };
 
+const PolicySection: React.FC<{
+  title: string;
+  text: string;
+  bullets?: string[];
+}> = ({ title, text, bullets }) => {
+  return (
+    <div className="rounded-2xl border bg-white shadow-sm">
+      <div className="p-6 sm:p-8">
+        <h2 className="text-2xl font-extrabold text-gray-900">{title}</h2>
+        <p className="mt-3 text-gray-700 leading-relaxed">{text}</p>
+
+        {bullets?.length ? (
+          <ul className="mt-4 list-disc ps-5 text-gray-700 space-y-2">
+            {bullets.map((b, i) => (
+              <li key={i}>{b}</li>
+            ))}
+          </ul>
+        ) : null}
+      </div>
+    </div>
+  );
+};
+
+const PrivacyPolicyPage = () => {
+  const { t } = useTranslation();
+
+  const lastUpdated = "2025-12-22"; // update when you change the policy
+
+  return (
+    <main className="min-h-screen bg-white">
+      <section className="border-b bg-[#DFE5EA]/40">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="inline-flex items-center gap-2 rounded-full bg-white border px-4 py-2 text-sm">
+            <span className="h-2 w-2 rounded-full bg-[#3A7DFF]" />
+            <span className="text-gray-700">{t("privacy.badge")}</span>
+          </div>
+
+          <h1 className="mt-6 text-4xl sm:text-5xl font-black text-[#1E4C9D]">
+            {t("privacy.title")}
+          </h1>
+
+          <p className="mt-4 text-gray-700 text-lg leading-relaxed">
+            {t("privacy.subtitle")}
+          </p>
+
+          <p className="mt-3 text-sm text-gray-500">
+            {t("privacy.lastUpdated")}{" "}
+            <span className="font-medium text-gray-700">{lastUpdated}</span>
+          </p>
+        </div>
+      </section>
+
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="space-y-10">
+          <PolicySection
+            title={t("privacy.sections.whoWeAre.title")}
+            text={t("privacy.sections.whoWeAre.text")}
+          />
+
+          <PolicySection
+            title={t("privacy.sections.whatWeCollect.title")}
+            text={t("privacy.sections.whatWeCollect.text")}
+            bullets={[
+              t("privacy.sections.whatWeCollect.bullets.account"),
+              t("privacy.sections.whatWeCollect.bullets.oauth"),
+              t("privacy.sections.whatWeCollect.bullets.usage"),
+              t("privacy.sections.whatWeCollect.bullets.cookies"),
+              t("privacy.sections.whatWeCollect.bullets.generated"),
+            ]}
+          />
+
+          <PolicySection
+            title={t("privacy.sections.howWeUse.title")}
+            text={t("privacy.sections.howWeUse.text")}
+            bullets={[
+              t("privacy.sections.howWeUse.bullets.provide"),
+              t("privacy.sections.howWeUse.bullets.auth"),
+              t("privacy.sections.howWeUse.bullets.security"),
+              t("privacy.sections.howWeUse.bullets.improve"),
+              t("privacy.sections.howWeUse.bullets.communicate"),
+            ]}
+          />
+
+          <PolicySection
+            title={t("privacy.sections.legalBases.title")}
+            text={t("privacy.sections.legalBases.text")}
+            bullets={[
+              t("privacy.sections.legalBases.bullets.contract"),
+              t("privacy.sections.legalBases.bullets.legitimate"),
+              t("privacy.sections.legalBases.bullets.consent"),
+            ]}
+          />
+
+          <PolicySection
+            title={t("privacy.sections.cookies.title")}
+            text={t("privacy.sections.cookies.text")}
+            bullets={[
+              t("privacy.sections.cookies.bullets.essential"),
+              t("privacy.sections.cookies.bullets.preferences"),
+              t("privacy.sections.cookies.bullets.analytics"),
+            ]}
+          />
+
+          <PolicySection
+            title={t("privacy.sections.sharing.title")}
+            text={t("privacy.sections.sharing.text")}
+            bullets={[
+              t("privacy.sections.sharing.bullets.providers"),
+              t("privacy.sections.sharing.bullets.google"),
+              t("privacy.sections.sharing.bullets.legal"),
+              t("privacy.sections.sharing.bullets.noSell"),
+            ]}
+          />
+
+          <PolicySection
+            title={t("privacy.sections.retention.title")}
+            text={t("privacy.sections.retention.text")}
+          />
+
+          <PolicySection
+            title={t("privacy.sections.security.title")}
+            text={t("privacy.sections.security.text")}
+          />
+
+          <PolicySection
+            title={t("privacy.sections.yourRights.title")}
+            text={t("privacy.sections.yourRights.text")}
+            bullets={[
+              t("privacy.sections.yourRights.bullets.access"),
+              t("privacy.sections.yourRights.bullets.correct"),
+              t("privacy.sections.yourRights.bullets.delete"),
+              t("privacy.sections.yourRights.bullets.withdraw"),
+            ]}
+          />
+
+          <PolicySection
+            title={t("privacy.sections.children.title")}
+            text={t("privacy.sections.children.text")}
+          />
+
+          <PolicySection
+            title={t("privacy.sections.international.title")}
+            text={t("privacy.sections.international.text")}
+          />
+
+          <div className="rounded-2xl border bg-[#1E4C9D] px-6 py-8 text-white">
+            <h2 className="text-2xl font-extrabold">
+              {t("privacy.sections.contact.title")}
+            </h2>
+            <p className="mt-3 text-white/90 leading-relaxed">
+              {t("privacy.sections.contact.text")}
+            </p>
+
+            <div className="mt-4 grid gap-2 text-sm">
+              <div className="flex flex-wrap gap-2">
+                <span className="font-semibold">
+                  {t("privacy.contact.emailLabel")}
+                </span>
+                <span className="text-white/90">
+                  {t("privacy.contact.emailValue")}
+                </span>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <span className="font-semibold">
+                  {t("privacy.contact.locationLabel")}
+                </span>
+                <span className="text-white/90">
+                  {t("privacy.contact.locationValue")}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <p className="text-xs text-gray-500">{t("privacy.disclaimer")}</p>
+        </div>
+      </section>
+    </main>
+  );
+};
+
+const TermsOfServicePage = () => {
+  return <div className="p-20">Terms of Service Page (To be implemented)</div>;
+};
+
 const App: React.FC = () => {
   useRTL();
 
@@ -358,6 +542,8 @@ const App: React.FC = () => {
           <Route path="/" element={<LandingPage />} />
           <Route path="/generate" element={<Wizard />} />
           <Route path="/auth" element={<AuthPage />} />
+          <Route path="/privacy" element={<PrivacyPolicyPage />} />
+          <Route path="/terms" element={<TermsOfServicePage />} />
         </Routes>
       </Layout>
     </Router>

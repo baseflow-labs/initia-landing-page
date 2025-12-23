@@ -35,7 +35,9 @@ export const Wizard: React.FC = () => {
   const [isLoggedIn, setIsLoggedIn] = React.useState(false); // Mock auth
   const [metadata, setMetadata] = React.useState<ProjectMetadata>({
     name: "My Awesome App",
-    type: "Web App",
+    description: "",
+    sector: "Education",
+    country: "Jordan",
     frontend: "React.js",
     backend: "Nest.js",
     db: "PostgreSQL",
@@ -398,9 +400,7 @@ export const Wizard: React.FC = () => {
                 {t("wizard.download.subtitle")}{" "}
                 <span className="text-[#1E4C9D] font-bold">
                   "{metadata.name}"
-                </span>{" "}
-                {t("wizard.download.using")} {metadata.stack}{" "}
-                {t("wizard.download.and")} {metadata.db}.
+                </span>
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">

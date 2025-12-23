@@ -22,32 +22,32 @@
     "title": "Ready to build something amazing?"
   },
   "footer": {
-    "about": "About",
+    "about": "Protection",
     "changelog": "Changelog",
     "connect": "Connect",
     "copyright": "All rights reserved.",
-    "description": "The intelligent app engine that transforms your thoughts into production-ready source code.",
+    "description": "The intelligent app engine that transforms your thoughts into production-ready source code in minutes.",
     "features": "Features",
-    "howItWorks": "How it works",
+    "howItWorks": "Usage",
     "license": "License",
     "pricing": "Pricing",
     "privacy": "Privacy Policy",
     "product": "Product",
     "tagline": "Built with precision for developers world-wide.",
     "terms": "Terms of Service",
-    "whoIsItFor": "Who is it for"
+    "whoIsItFor": "Features"
   },
   "forWhom": {
     "indieDevelopers": {
-      "description": "Skip the setup and focus on shipping features that matter.",
+      "description": "Skip the basic setup every time, and focus on shipping the complicated features that matter.",
       "title": "Indie Developers"
     },
     "startupFounders": {
-      "description": "Validate your MVP in hours, not weeks. Real code, no vendor lock-in.",
+      "description": "Start validating your MVP in hours, not weeks. Don't wait for weeks and months to build.",
       "title": "Startup Founders"
     },
     "students": {
-      "description": "Learn best practices by seeing how professional architectures are built.",
+      "description": "Learn coding best practices by noting the professional architectures we build.",
       "title": "MVP & Student Projects"
     },
     "title": "Built for the next generation of builders."
@@ -65,7 +65,7 @@
     "placeholder": "e.g., A task management app with teams, nested tasks, and file attachments...",
     "quickTemplates": "Quick templates:",
     "secondary": "View Example",
-    "subtext": "Design your database, pick your stack, and download high-quality source code in seconds.",
+    "subtext": "Design your system smoothly and quickly, and download high-quality source code in minutes.",
     "templateSaas": "SaaS",
     "templateStore": "Store"
   },
@@ -76,7 +76,7 @@
         "title": "Describe your idea"
       },
       "step2": {
-        "description": "We generate a professional ERD schema for your approval.",
+        "description": "We generate a simple visualization for your review & approval.",
         "title": "Review schema visually"
       },
       "step3": {
@@ -84,7 +84,7 @@
         "title": "Confirm & customize"
       },
       "step4": {
-        "description": "Get production-ready source code ready to run locally.",
+        "description": "Get production-ready source code ready to deploy and launch.",
         "title": "Download code"
       }
     },
@@ -100,7 +100,7 @@
     "finePrint": "No credit card required.",
     "headline": "Completely Free. No lock-in.",
     "primaryCta": "Start Generating",
-    "secondaryCta": "View on GitHub",
+    "secondaryCta": "View Initia Source-Code",
     "subtitle": "Initia is open-source and free to use. Generate code, download it, and own it.",
     "title": "Free Forever"
   },
@@ -306,9 +306,9 @@
       "language": "Language",
       "projectName": "Project Name",
       "sector": "Industry / Sector",
-      "subtitle": "Fine-tune the output for your development environment.",
+      "subtitle": "Tell us more about your project.",
       "technical": {
-        "subtitle": "Specify additional technical preferences for your project.",
+        "subtitle": "Specify the technical preferences for your project.",
         "title": "Technical Details"
       },
       "title": "Project Details"

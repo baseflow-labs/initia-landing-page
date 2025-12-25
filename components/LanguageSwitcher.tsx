@@ -1,10 +1,12 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Globe } from "lucide-react";
+import { useRTL } from "@/hooks/useRTL";
 
 export const LanguageSwitcher: React.FC = () => {
   const { i18n } = useTranslation();
   const [isOpen, setIsOpen] = React.useState(false);
+  const { isRTL } = useRTL();
 
   const languages = [
     { code: "en", name: "English", flag: "🇺🇸" },
@@ -23,7 +25,7 @@ export const LanguageSwitcher: React.FC = () => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative w-fit">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
@@ -41,7 +43,11 @@ export const LanguageSwitcher: React.FC = () => {
             className="fixed inset-0 z-40"
             onClick={() => setIsOpen(false)}
           />
-          <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-100 z-50 overflow-hidden">
+          <div
+            className={`absolute ${
+              isRTL ? "right-0" : "left-0"
+            } mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-100 z-50 overflow-hidden`}
+          >
             {languages.map((lang) => (
               <button
                 key={lang.code}

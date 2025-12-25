@@ -12,7 +12,7 @@ i18n.use(initReactI18next).init({
       translation: ar,
     },
   },
-  supportedLangs: ["en", "ar"],
+  supportedLngs: ["en", "ar"],
   lng: "ar",
   fallbackLng: "ar",
   interpolation: {

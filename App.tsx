@@ -7,7 +7,7 @@ import {
   Users,
   Zap,
 } from "lucide-react";
-import React from "react";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
@@ -33,7 +33,7 @@ const LandingPage = () => {
               {t("howItWorks.subtitle")}
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {[1, 2, 3, 4].map((idx) => (
               <div
                 key={idx}
@@ -146,7 +146,7 @@ const LandingPage = () => {
             {t("forWhom.title")}
           </h2>
 
-          <div className="flex space-x-6 mb-20">
+          <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 mb-20">
             <div className="flex gap-4">
               <div className="mt-1 flex-shrink-0 w-10 h-10 bg-purple-50 rounded-lg flex items-center justify-center text-purple-600">
                 <Zap size={20} />
@@ -660,7 +660,7 @@ const App: React.FC = () => {
   useRTL();
 
   // Initialization for Analytics (Placeholders)
-  React.useEffect(() => {
+  useEffect(() => {
     // Analytics & Clarity init would go here
     console.log(
       "Analytics Initialized: Google Analytics, Microsoft Clarity ready."

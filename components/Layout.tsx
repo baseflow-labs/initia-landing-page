@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import logoFull from "./logo-full.png";
+import { HashLink } from "react-router-hash-link";
 
 export const Header: React.FC = () => {
   const { t } = useTranslation();
@@ -19,19 +20,28 @@ export const Header: React.FC = () => {
     <nav className="sticky top-0 z-50 bg-white border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
-          <Link to="/" className="flex items-center">
+          <Link
+            to="/"
+            onClick={() => {
+              window.scrollTo({
+                top: 0,
+                behavior: "instant",
+              });
+            }}
+            className="flex items-center"
+          >
             <img src={logoFull} alt="Logo" className="h-8" />
           </Link>
 
-          <div className="hidden md:flex space-x-8 items-center">
+          <div className="hidden md:flex lg:gap-6 md:gap-4 items-center">
             {links.map(({ href, label }, i) => (
-              <a
-                href={href}
+              <HashLink
+                to={href}
                 className="text-gray-600 hover:text-[#1E4C9D] font-medium transition-colors text-center"
                 key={i}
               >
                 {label}
-              </a>
+              </HashLink>
             ))}
 
             <LanguageSwitcher />
@@ -71,19 +81,35 @@ export const Header: React.FC = () => {
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-white border-b border-gray-100 py-4 px-4 space-y-4 shadow-lg animate-in fade-in slide-in-from-top-4">
-          <Link to="/" className="block text-gray-600 font-medium">
-            {t("header.howItWorks")}
-          </Link>
+        <div className="*:block md:hidden bg-white border-b border-gray-100 py-4 px-4 space-y-4 shadow-lg animate-in fade-in slide-in-from-top-4 absolute w-full top-full">
+          {links.map(({ href, label }, i) => (
+            <a
+              href={href}
+              className="text-gray-600 hover:text-[#1E4C9D] font-medium transition-colors"
+              key={i}
+              onClick={() => setIsOpen(false)}
+            >
+              {label}
+            </a>
+          ))}
+          <LanguageSwitcher />
+          <a
+            href="https://github.com/baseflow-labs"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-600 hover:text-[#1E4C9D] font-medium transition-colors"
+          >
+            <Github size={18} />
+          </a>
           <Link
             to="/auth?mode=login"
-            className="block text-gray-600 font-medium"
+            className="text-gray-600 hover:text-[#1E4C9D] font-medium transition-colors"
           >
             {t("header.signIn")}
           </Link>
           <Link
             to="/generate"
-            className="block w-full text-center bg-[#3A7DFF] text-white px-4 py-3 rounded-lg font-medium"
+            className="bg-[#3A7DFF] text-white text-center px-5 py-2.5 rounded-lg font-medium hover:bg-blue-600 transition-all shadow-sm active:scale-95"
           >
             {t("header.startGenerating")}
           </Link>
@@ -100,7 +126,7 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-1 md:col-span-1">
-            <img src={logoFull} alt="Initia Logo" className="h-8 mb-4 h-100" />
+            <img src={logoFull} alt="Initia Logo" className="h-8 mb-4" />
 
             <p className="text-gray-600 text-sm leading-relaxed">
               {t("footer.description")}
@@ -112,19 +138,19 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-4 text-sm text-gray-600">
               <li>
-                <a href="#how-it-works" className="hover:text-[#1E4C9D]">
+                <HashLink to="/#how-it-works" className="hover:text-[#1E4C9D]">
                   {t("footer.howItWorks")}
-                </a>
+                </HashLink>
               </li>
               <li>
-                <a href="#pricing" className="hover:text-[#1E4C9D]">
+                <HashLink to="/#pricing" className="hover:text-[#1E4C9D]">
                   {t("footer.pricing")}
-                </a>
+                </HashLink>
               </li>
               <li>
-                <a href="#who-is-it-for" className="hover:text-[#1E4C9D]">
+                <HashLink to="/#who-is-it-for" className="hover:text-[#1E4C9D]">
                   {t("footer.whoIsItFor")}
-                </a>
+                </HashLink>
               </li>
             </ul>
           </div>
@@ -144,12 +170,24 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <Link to="/privacy" className="hover:text-[#1E4C9D]">
+                <Link
+                  to="/privacy"
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                  }}
+                  className="hover:text-[#1E4C9D]"
+                >
                   {t("footer.privacy")}
                 </Link>
               </li>
               <li>
-                <Link to="/terms" className="hover:text-[#1E4C9D]">
+                <Link
+                  to="/terms"
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                  }}
+                  className="hover:text-[#1E4C9D]"
+                >
                   {t("footer.terms")}
                 </Link>
               </li>

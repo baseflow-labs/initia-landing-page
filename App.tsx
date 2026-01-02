@@ -13,6 +13,7 @@ import { Link, Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 import { Hero } from "./components/Hero";
 import { Layout } from "./components/Layout";
+import logo from "./components/logo.png";
 import { Wizard } from "./components/Wizard";
 import { useRTL } from "./hooks/useRTL";
 
@@ -142,11 +143,13 @@ const LandingPage = () => {
       {/* For Whom Section */}
       <section className="py-24" id="who-is-it-for">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-black text-[#1E4C9D] mb-20 leading-tight text-center">
+          <h2 className="text-4xl font-black text-[#1E4C9D] mb-20 leading-tight text-center flex items-center justify-center">
+            <img src={logo} alt="Initia Logo" className="h-10 mb-4 mt-4 me-3" />
+
             {t("forWhom.title")}
           </h2>
 
-          <div className="flex space-x-6 mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
             <div className="flex gap-4">
               <div className="mt-1 flex-shrink-0 w-10 h-10 bg-purple-50 rounded-lg flex items-center justify-center text-purple-600">
                 <Zap size={20} />

@@ -2,6 +2,7 @@ import { Github, Menu, X } from "lucide-react";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import logoFull from "./logo-full.png";
 
@@ -100,12 +101,13 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-1 md:col-span-1">
-            <img src={logoFull} alt="Initia Logo" className="h-8 mb-4 h-100" />
+            <img src={logoFull} alt="Initia Logo" className="mb-4 w-100" />
 
-            <p className="text-gray-600 text-sm leading-relaxed">
+            {/* <p className="text-gray-600 text-sm leading-relaxed">
               {t("footer.description")}
-            </p>
+            </p> */}
           </div>
+
           <div>
             <h4 className="font-bold text-gray-900 mb-6">
               {t("footer.product")}
@@ -128,6 +130,7 @@ export const Footer: React.FC = () => {
               </li>
             </ul>
           </div>
+
           <div>
             <h4 className="font-bold text-gray-900 mb-6">
               {t("footer.about")}
@@ -155,6 +158,7 @@ export const Footer: React.FC = () => {
               </li>
             </ul>
           </div>
+
           <div>
             <h4 className="font-bold text-gray-900 mb-6">
               {t("footer.connect")}
@@ -171,6 +175,7 @@ export const Footer: React.FC = () => {
             </div>
           </div>
         </div>
+
         <div className="border-t border-gray-300 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
           <p>
             © {new Date().getFullYear()} Initia. {t("footer.copyright")}

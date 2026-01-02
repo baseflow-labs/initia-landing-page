@@ -1,4 +1,5 @@
 import {
+  ArrowLeft,
   ArrowRight,
   Check,
   Code,
@@ -11,6 +12,7 @@ import {
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate, useSearchParams } from "react-router-dom";
+
 import { AppSchema, ProjectMetadata, WizardStep } from "../types";
 import { SchemaVisualizer } from "./SchemaVisualizer";
 
@@ -23,7 +25,8 @@ const STEPS = [
 ];
 
 export const Wizard: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isRtl = i18n.dir() === "rtl";
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const [currentStep, setCurrentStep] = React.useState<WizardStep>(
@@ -505,7 +508,7 @@ export const Wizard: React.FC = () => {
               {currentStep === WizardStep.AUTH
                 ? t("wizard.signIn")
                 : t("wizard.continue")}
-              <ArrowRight size={20} />
+              {isRtl ? <ArrowLeft size={20} /> : <ArrowRight size={20} />}
             </button>
           </div>
         )}

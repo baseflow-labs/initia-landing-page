@@ -1,5 +1,6 @@
 import {
   CheckCircle2,
+  ChevronLeft,
   ChevronRight,
   Code,
   Layers,
@@ -18,7 +19,8 @@ import { Wizard } from "./components/Wizard";
 import { useRTL } from "./hooks/useRTL";
 
 const LandingPage = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isRtl = i18n.dir() === "rtl";
   return (
     <div className="bg-white">
       <Hero />
@@ -283,7 +285,8 @@ const LandingPage = () => {
               to="/generate"
               className="px-12 py-5 bg-[#3A7DFF] text-white rounded-2xl font-black text-xl hover:bg-white hover:text-[#1E4C9D] transition-all flex items-center justify-center gap-3"
             >
-              {t("cta.button")} <ChevronRight size={24} />
+              {t("cta.button")}{" "}
+              {isRtl ? <ChevronLeft size={24} /> : <ChevronRight size={24} />}
             </Link>
           </div>
         </div>

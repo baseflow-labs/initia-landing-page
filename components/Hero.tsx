@@ -1,14 +1,15 @@
+import { useRTL } from "@/hooks/useRTL";
+import { AppWindow, ArrowLeft, ArrowRight, Zap } from "lucide-react";
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useTranslation } from "react-i18next";
 import { ArrowRight, Play, Zap } from "lucide-react";
-import { useRTL } from "@/hooks/useRTL";
+import { useTranslation } from "react-i18next";
 
 export const Hero: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [prompt, setPrompt] = React.useState("");
   const navigate = useNavigate();
-  const { isRTL } = useRTL();
+  const isRtl = i18n.dir() === "rtl";
 
   const handleStart = () => {
     if (prompt.trim()) {
@@ -64,26 +65,19 @@ export const Hero: React.FC = () => {
                     href="https://initia-frontend-template.vercel.app/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 sm:flex-none flex items-center justify-center sm:gap-2 gap-1 sm:px-6 p-2 bg-white border border-gray-200 text-gray-700 font-bold rounded-xl hover:bg-gray-50 transition-all shadow-sm sm:text-base text-sm"
+                    className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-6 py-3 bg-white border border-gray-200 text-gray-700 font-bold rounded-xl hover:bg-gray-50 transition-all shadow-sm"
                   >
-                    <Play size={18} fill="currentColor" className="shrink-0" />
+                    <AppWindow size={18} />
                     {t("hero.secondary")}
                   </a>
-                  <Link
-                    to={`/generate${
-                      prompt.trim()
-                        ? `?prompt=${encodeURIComponent(prompt)}`
-                        : ""
-                    }`}
+
+                  <button
                     onClick={handleStart}
                     className="flex-1 sm:flex-none flex items-center justify-center sm:gap-2 gap-1 sm:px-10 p-2 bg-[#3A7DFF] text-white font-bold rounded-xl hover:bg-blue-600 transition-all shadow-lg hover:shadow-blue-200/50 active:scale-95 sm:text-base text-sm"
                   >
                     {t("hero.cta")}
-                    <ArrowRight
-                      size={18}
-                      className={`shrink-0 ${isRTL ? "rotate-180" : ""}`}
-                    />
-                  </Link>
+                    {isRtl ? <ArrowLeft size={24} /> : <ArrowRight size={24} />}
+                  </button>
                 </div>
               </div>
             </div>

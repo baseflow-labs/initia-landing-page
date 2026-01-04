@@ -1,5 +1,6 @@
 import {
   CheckCircle2,
+  ChevronLeft,
   ChevronRight,
   Code,
   Layers,
@@ -13,11 +14,13 @@ import { Link, Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 import { Hero } from "./components/Hero";
 import { Layout } from "./components/Layout";
+import logo from "./components/logo.png";
 import { Wizard } from "./components/Wizard";
 import { useRTL } from "./hooks/useRTL";
 
 const LandingPage = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isRtl = i18n.dir() === "rtl";
   return (
     <div className="bg-white">
       <Hero />
@@ -142,11 +145,13 @@ const LandingPage = () => {
       {/* For Whom Section */}
       <section className="py-24" id="who-is-it-for">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-black text-[#1E4C9D] mb-20 leading-tight text-center">
+          <h2 className="text-4xl font-black text-[#1E4C9D] mb-20 leading-tight text-center flex items-center justify-center">
+            <img src={logo} alt="Initia Logo" className="h-10 mb-4 mt-4 me-3" />
+
             {t("forWhom.title")}
           </h2>
 
-          <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
             <div className="flex gap-4">
               <div className="mt-1 flex-shrink-0 w-10 h-10 bg-purple-50 rounded-lg flex items-center justify-center text-purple-600">
                 <Zap size={20} />
@@ -280,7 +285,8 @@ const LandingPage = () => {
               to="/generate"
               className="px-12 py-5 bg-[#3A7DFF] text-white rounded-2xl font-black text-xl hover:bg-white hover:text-[#1E4C9D] transition-all flex items-center justify-center gap-3"
             >
-              {t("cta.button")} <ChevronRight size={24} />
+              {t("cta.button")}{" "}
+              {isRtl ? <ChevronLeft size={24} /> : <ChevronRight size={24} />}
             </Link>
           </div>
         </div>

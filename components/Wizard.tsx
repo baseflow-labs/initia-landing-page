@@ -330,7 +330,10 @@ export const Wizard: React.FC = () => {
                   className="w-full p-3 rounded-xl border border-gray-200 focus:border-blue-500 outline-none bg-white"
                   value={metadata.db}
                   onChange={(e) =>
-                    setMetadata({ ...metadata, db: e.target.value })
+                    setMetadata({
+                      ...metadata,
+                      db: e.target.value as DatabaseType,
+                    })
                   }
                 >
                   <option>PostgreSQL</option>
@@ -350,7 +353,7 @@ export const Wizard: React.FC = () => {
                   onChange={(e) =>
                     setMetadata({
                       ...metadata,
-                      language: e.target.value,
+                      language: e.target.value as Language,
                     })
                   }
                 >

@@ -1,8 +1,9 @@
 import { useRTL } from "@/hooks/useRTL";
 import { AppWindow, ArrowLeft, ArrowRight, Zap } from "lucide-react";
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { ArrowRight, Play, Zap } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
 
 export const Hero: React.FC = () => {
   const { t, i18n } = useTranslation();
@@ -19,16 +20,16 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative overflow-hidden pt-20 pb-24 md:pt-32 md:pb-36 bg-white">
+    <section className="relative overflow-hidden min-h-[calc(100dvh-64px)] flex justify-center items-center bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 text-[#3A7DFF] text-xs font-bold rounded-full mb-8 tracking-wider uppercase">
+        <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 text-[#3A7DFF] text-xs font-bold rounded-full md:mb-8 mb-5 tracking-wider uppercase">
           <Zap size={14} fill="currentColor" />
           {t("hero.badge")}
         </div>
-        <h1 className="text-5xl md:text-7xl font-extrabold text-[#1E4C9D] tracking-tight mb-6 leading-tight max-w-4xl mx-auto">
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-[#1E4C9D] tracking-tight mb-6 leading-tight max-w-4xl mx-auto">
           {t("hero.headline")}
         </h1>
-        <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto font-medium">
+        <p className="md:text-xl text-lg text-gray-600 md:mb-12 mb-8 max-w-2xl mx-auto font-medium">
           {t("hero.subtext")}
         </p>
 
@@ -72,7 +73,7 @@ export const Hero: React.FC = () => {
 
                   <button
                     onClick={handleStart}
-                    className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-10 py-3 bg-[#3A7DFF] text-white font-bold rounded-xl hover:bg-blue-600 transition-all shadow-lg hover:shadow-blue-200/50 active:scale-95"
+                    className="flex-1 sm:flex-none flex items-center justify-center sm:gap-2 gap-1 sm:px-10 p-2 bg-[#3A7DFF] text-white font-bold rounded-xl hover:bg-blue-600 transition-all shadow-lg hover:shadow-blue-200/50 active:scale-95 sm:text-base text-sm"
                   >
                     {t("hero.cta")}
                     {isRtl ? <ArrowLeft size={24} /> : <ArrowRight size={24} />}
